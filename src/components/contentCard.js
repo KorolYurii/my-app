@@ -6,7 +6,8 @@ import { ReactDOM } from "react";
 export default function GenerateCards(results){
    // const ICON_URL = `https://openweathermap.org/img/wn/${results.weather[0].icon}@2x.png`
     
-    console.log(results);    
+    console.log(results); 
+       
     
     return (
         <div>
