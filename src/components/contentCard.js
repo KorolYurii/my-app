@@ -18,7 +18,7 @@ export default function GenerateCards(results){
         </div>
         
     )
-          
+        
 }
  
  const cardsContent = document.getElementById('content');
