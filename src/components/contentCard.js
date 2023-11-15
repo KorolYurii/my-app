@@ -6,7 +6,8 @@ import { ReactDOM } from "react";
 export default function GenerateCards(results){
    // const ICON_URL = `https://openweathermap.org/img/wn/${results.weather[0].icon}@2x.png`
     
-    console.log(results);
+    console.log(results);    
+    
     return (
         <div>
             <span className="country">${results.sys.country},</span>
@@ -15,9 +16,9 @@ export default function GenerateCards(results){
             
             <span className="temp">${results.main.temp} °C</span>          
             <span className="speed">wind speed:  ${results.wind.speed} m/s</span>
-        </div>        
-    )
-        
+        </div> 
+
+    )        
 }
  
  //const cardsContent = document.getElementById('content');
