@@ -1,5 +1,5 @@
 //import React from "react";
-import App from "../App"
+//import App from "../App";
 import { ReactDOM } from "react";
 
 
@@ -22,6 +22,6 @@ export default function GenerateCards(results){
 }
  
  const cardsContent = document.getElementById('content');
- ReactDOM.createRoot(cardsContent).render(App);
+ ReactDOM.createRoot(cardsContent).render(GenerateCards);
 // root.render(React.createElement(App))
  
