@@ -19,7 +19,7 @@ export default function FormHandler(props) {
             
             axios.get(BASE_URL+`&q=${name}`)
             .then(function (res) {
-                //console.log(res); 
+                console.log(res); 
 
                 GenerateCards(res.data);      
                            
