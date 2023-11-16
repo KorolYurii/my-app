@@ -4,10 +4,12 @@ import './styles/main.scss'
 
 //components
 import FormHandler from './components/form'
-import ContentHandler from './components/content'
-import DayContentHanler from './components/dayContent'
+//import ContentHandler from './components/content'
+//import DayContentHanler from './components/dayContent'
+//import GenerateCards from './components/contentCard'
+ import GenerateDaysCards from './components/dayContentCard'
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <div className="page_wraper">
@@ -15,11 +17,11 @@ function App() {
           <div className="content_wrapper">
             <FormHandler/>  
             <div id="content">
-              <ContentHandler/>
+            
             </div>
           </div> 
           <div id="day_content">
-            <DayContentHanler/>
+            <GenerateDaysCards/>
           </div>                     
           
             
