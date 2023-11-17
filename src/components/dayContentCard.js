@@ -6,7 +6,7 @@ const tempIcon = 'https://cdn-icons-png.flaticon.com/512/7458/7458637.png'
 export default function GenerateDaysCards(props){
 
 if (props?.resultData?.list) {
-    console.log(props?.resultData);
+    
     const results = props.resultData.list.map((el, index) => {        
         const ICON_DAY_URL = `https://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`  
             let dateList = new Date(el.dt_txt);

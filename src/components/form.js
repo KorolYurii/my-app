@@ -33,7 +33,8 @@ export default function FormHandler(props) {
             .then(function (res) {
                  
                 props.setDaysData(res.data)
-                onChangeCity(e)          
+                props.setLocation(res.data)
+                // onChangeCity(e)          
             })
             
         }
@@ -53,7 +54,7 @@ export default function FormHandler(props) {
                 placeholder="Enter your City"/>
             <div className="btn_container">
                 <button className="btn_search" onClick={onChangeCity}>search</button>
-                <button className="btn_search"  onClick={onChangeCityDays}  >search 5 days</button>
+                <button className="btn_search"  onClick={onChangeCityDays}>search 5 days</button>
             </div>                 
         </form>
         

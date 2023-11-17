@@ -7,10 +7,12 @@ import { useState } from 'react'
 import FormHandler from './components/form'
 import GenerateCards from './components/contentCard'
 import GenerateDaysCards from './components/dayContentCard'
+import CityName from './components/cityName'
 
-export default function App(props) {
+export default function App() {
   const [resultData, setResultData] = useState(null);
   const [daysData, setDaysData] = useState(null);
+  const [location, setLocation] = useState(null)
  
   return (
     
@@ -20,13 +22,16 @@ export default function App(props) {
           <div className="content_wrapper">
             <FormHandler 
               setResultData={(value) => setResultData(value)}
-              setDaysData={(value) => setDaysData(value)}/>  
+              setDaysData={(value) => setDaysData(value)}
+              setLocation={(value) => setLocation(value)}
+              /> 
+              
             <div id="content">
               <GenerateCards results={resultData}/>
             </div>
           </div> 
           <div id="day_content">
-            
+            <CityName resultData={location}/> 
             <ul className="day_list">
               <GenerateDaysCards resultData={daysData}/>
             </ul>            
