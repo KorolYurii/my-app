@@ -1,27 +1,32 @@
 // import logo from './logo.svg';
+import './styles/reset.scss'
 import './styles/main.scss'
-
+import { useState } from 'react'
 
 //components
 import FormHandler from './components/form'
-//import ContentHandler from './components/content'
-//import DayContentHanler from './components/dayContent'
-//import GenerateCards from './components/contentCard'
- import GenerateDaysCards from './components/dayContentCard'
+import GenerateCards from './components/contentCard'
+import GenerateDaysCards from './components/dayContentCard'
 
-function App(props) {
+export default function App() {
+  const [resultData, setResultData] = useState(null);
+  const [daysData, setDaysData] = useState(null);
   return (
     <div className="App">
       <div className="page_wraper">
         <div className="container">
           <div className="content_wrapper">
-            <FormHandler/>  
+            <FormHandler 
+              setResultData={(value) => setResultData(value)}
+              setDaysData={(value) => setDaysData(value)}/>  
             <div id="content">
-            
+              <GenerateCards results={resultData}/>
             </div>
           </div> 
           <div id="day_content">
-            <GenerateDaysCards/>
+            <ul className="day_list">
+              <GenerateDaysCards resultData={daysData}/>
+            </ul>            
           </div>                     
           
             
@@ -30,5 +35,6 @@ function App(props) {
     </div>
   );
 }
-
-export default App;
+// const root = ReactDOM.createRoot(document.getElementById('day_content'));
+//  root.render(React.createElement())
+// //export default App;

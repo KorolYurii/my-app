@@ -1,22 +1,24 @@
-//import React from "react";
-//import App from "../App";
-//import { ReactDOM } from "react";
 
 
-
-export default function GenerateCards(results){
-   const ICON_URL = `https://openweathermap.org/img/wn/${results.weather[0].icon}@2x.png`    
-    console.log(ICON_URL);   
-    return (       
-        <div className="list">
-            <span className="country">{results.sys.country},</span>
-            <span className="city_name">{results.name}</span> <br /> 
-            <span className="description">{results.weather[0].description}</span> <br />    
-            <img src={ICON_URL} alt=""/>
-            <span className="temp">{results.main.temp} °C</span>          
-            <span className="speed">wind speed:  {results.wind.speed} m/s</span>
-        </div>          
-    )            
+export default function GenerateCards(props){
+    if(!props.results) {
+        return false;
+    }
+    const { results } = props;
+    const ICON_URL = `https://openweathermap.org/img/wn/${results.weather[0].icon}@2x.png`    
+       
+        return (       
+            <div className="list">
+                <span className="country">{results.sys.country}, </span>
+                <span className="city_name">{results.name}</span> <br /> 
+                <span className="description">{results.weather[0].description}</span> <br />    
+                <img src={ICON_URL} alt=""/><br/>
+                <span className="temp">{results.main.temp} °C</span>   <br />       
+                <span className="speed">wind speed:  {results.wind.speed} m/s</span>
+            </div>          
+        )           
+       
+     
 } 
-//console.log(GenerateCards);
+
  

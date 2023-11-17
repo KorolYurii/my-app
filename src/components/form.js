@@ -14,15 +14,13 @@ export default function FormHandler(props) {
 
     const onChangeCity = (e) => {        
         e.preventDefault();
-        //console.log(name);
+        
         if(name) {
             
             axios.get(BASE_URL+`&q=${name}`)
             .then(function (res) {
-                //console.log(res.data); 
-
-                GenerateCards(res.data);      
-                           
+                props.setResultData(res.data)
+                          
             })
         }
     }
@@ -30,13 +28,14 @@ export default function FormHandler(props) {
         e.preventDefault();
         
         if(name) {
-            //console.log(name);
+            
             axios.get(DAYS_URL+`&q=${name}`)
             .then(function (res) {
                  
-   
-                GenerateDaysCards(res.data)           
+                props.setDaysData(res.data)
+                onChangeCity(e)          
             })
+            
         }
     }
     
@@ -54,7 +53,7 @@ export default function FormHandler(props) {
                 placeholder="Enter your City"/>
             <div className="btn_container">
                 <button className="btn_search" onClick={onChangeCity}>search</button>
-                <button className="btn_search"  onClick={onChangeCityDays} >search 5 days</button>
+                <button className="btn_search"  onClick={onChangeCityDays}  >search 5 days</button>
             </div>                 
         </form>
         
