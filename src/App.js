@@ -8,10 +8,12 @@ import FormHandler from './components/form'
 import GenerateCards from './components/contentCard'
 import GenerateDaysCards from './components/dayContentCard'
 
-export default function App() {
+export default function App(props) {
   const [resultData, setResultData] = useState(null);
   const [daysData, setDaysData] = useState(null);
+ 
   return (
+    
     <div className="App">
       <div className="page_wraper">
         <div className="container">
@@ -24,6 +26,7 @@ export default function App() {
             </div>
           </div> 
           <div id="day_content">
+            
             <ul className="day_list">
               <GenerateDaysCards resultData={daysData}/>
             </ul>            
@@ -34,6 +37,7 @@ export default function App() {
       </div>
     </div>
   );
+  
 }
 // const root = ReactDOM.createRoot(document.getElementById('day_content'));
 //  root.render(React.createElement())
