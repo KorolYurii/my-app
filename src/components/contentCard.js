@@ -20,5 +20,12 @@ export default function GenerateCards(props){
        
      
 } 
+// function transformContent(e) {
+//     e.preventDefault();
+//     document.querySelector('.list').classList.add('trans')
+// }
+
+    
+
 
  
