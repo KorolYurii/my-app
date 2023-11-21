@@ -30,11 +30,12 @@ h1{
     visibility: hidden;
 }
 .error{
+    margin-top: 20px;
     text-transform: capitalize;
     font-size: 55px;
     font-weight: 700;
     text-align: center;
-    color: #fff;
+    color: #3b3b3b;
     text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
 }
 .form{
