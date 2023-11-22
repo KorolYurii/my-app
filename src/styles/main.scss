@@ -30,7 +30,7 @@ h1{
     visibility: hidden;
 }
 .error{
-    margin-top: 20px;
+    margin-bottom: 10px;
     text-transform: capitalize;
     font-size: 55px;
     font-weight: 700;
@@ -294,6 +294,15 @@ h1{
 }
 
 #day_content{
+    .location_wrapper{
+        .country_name{
+            font-size: 3rem;
+        }
+        .city_name{
+            font-size: 3rem;
+        }
+
+    }
     .day_list{
         // display: flex;
         // flex-direction: column;
