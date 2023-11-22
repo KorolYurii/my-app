@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Error (props) {
-    console.log(props);
+    //console.log(props);
     if(!props?.resultData){        
         return false;
     }

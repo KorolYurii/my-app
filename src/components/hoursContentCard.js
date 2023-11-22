@@ -3,7 +3,9 @@ import React from "react";
 let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 const windIcon = 'https://static-00.iconduck.com/assets.00/wind-icon-512x391-qf7yccb4.png'
 const tempIcon = 'https://cdn-icons-png.flaticon.com/512/7458/7458637.png'
-export default function GenerateDaysCards(props){
+
+
+export default function GenerateHoursCards(props){
 
 if (props?.resultData?.list) {
     
@@ -16,7 +18,7 @@ if (props?.resultData?.list) {
                 <span className="days">{days[dateNumber]}, </span><br/> 
                 <span className="txt">{el.dt_txt},</span><br/> <br/>
                 <img className="temp_icon" src={tempIcon} alt="" />
-                <span className="temp">  {el.main.temp} °C</span><br/> 
+                <span className="temp">  {Math.round(el.main.temp)} °C</span><br/> 
                 <img src={ICON_DAY_URL} alt=""/><br/>
                 <span className="description">{el.weather[0].description}</span><br/> 
                 <img src={windIcon} alt="" className="wind_icon" />  

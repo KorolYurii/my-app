@@ -169,6 +169,7 @@ h1{
     width: 100%;
     
 }
+
 .location_wrapper{
    
     text-align: center;
@@ -182,16 +183,12 @@ h1{
     
 }
 
-
-
 .day_list{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 190px);
-    justify-content: space-evenly;
-    //flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
-    width: 100%;
-    padding-top: 30px;
+    margin-bottom: 30px;
     .day_list_item{
         min-width: 180px;
         padding: 5px;
@@ -205,9 +202,9 @@ h1{
             font-weight: 700;
             font-size: 34px;
             text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
-
+    
         }
-        .days{
+        .txt{
             font-weight: 600;
         }
         .description{
@@ -224,6 +221,50 @@ h1{
             width: 30px;
         }
     }
+    
+}
+
+.hours_list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 190px);
+    justify-content: space-evenly;
+    //flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    padding-top: 30px;
+    
+}
+.day_list_item{
+    min-width: 180px;
+    padding: 5px;
+    border: #000 2px solid;
+    border-radius: 4px;
+    background-color: #1a1516;;
+    text-align: center;
+    opacity: 0.9;
+    color: #fff;
+    .temp{
+        font-weight: 700;
+        font-size: 34px;
+        text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
+
+    }
+    .days{
+        font-weight: 600;
+    }
+    .description{
+        text-transform: capitalize;
+        line-height: 30px;
+    }
+    .wind{
+        font-weight: 700;
+        font-size: 24px;
+        text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
+    }
+    .wind_icon,
+    .temp_icon{
+        width: 30px;
+    }
 }
 
 
@@ -236,19 +277,11 @@ h1{
         .city_name{
             font-size: 3rem;
         }
-        .description{
-            
-        }
-        .icon{
-
-        }
         .temp{
             
             font-size: 3rem; 
         }
-        .speed{
-            
-        }
+        
     }
 }
 .form{

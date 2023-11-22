@@ -4,15 +4,19 @@ import './styles/main.scss'
 import { useState } from 'react'
 
 
+
 //components
 import Error from './components/errorData'
 import FormHandler from './components/form'
-import GenerateCards from './components/contentCard'
-import GenerateDaysCards from './components/dayContentCard'
 import CityName from './components/cityName'
+import GenerateCards from './components/contentCard'
+import GenerateDaysCards from './components/daysContentCard'
+import GenerateHoursCards from './components/hoursContentCard'
+
 
 export default function App() {
   const [resultData, setResultData] = useState(null);
+  const [hoursData, setHoursData] = useState(null);
   const [daysData, setDaysData] = useState(null);
   const [location, setLocation] = useState(null)
   const [errorData, setErrorData] = useState(null)
@@ -25,20 +29,25 @@ export default function App() {
           <div className="content_wrapper">
             <FormHandler 
               setResultData={(value) => setResultData(value)}
-              setDaysData={(value) => setDaysData(value)}
-              setLocation={(value) => setLocation(value)}
+              setHoursData={(value) => setHoursData(value)}
               setErrorData={(value) => setErrorData(value)}
+              setDaysData={(value) => setDaysData(value)}
+              setLocation={(value) => setLocation(value)}              
               /> 
               
             <div id="content">
-              <GenerateCards results={resultData}/> 
               <Error resultData={errorData}/>
+              <GenerateCards results={resultData}/> 
             </div>
+            
           </div> 
+          <ul className="day_list">
+            <GenerateDaysCards results={daysData}/>
+          </ul>
           <div id="day_content">
             <CityName resultData={location}/> 
-            <ul className="day_list">
-              <GenerateDaysCards resultData={daysData}/>
+            <ul className="hours_list">
+              <GenerateHoursCards resultData={hoursData}/>
             </ul>            
           </div>                     
           
@@ -52,3 +61,6 @@ export default function App() {
 // const root = ReactDOM.createRoot(document.getElementById('day_content'));
 //  root.render(React.createElement())
 // //export default App;
+// <ul className="day_list">
+{/* <GenerateDaysCards results={daysData}/>
+</ul> */}
